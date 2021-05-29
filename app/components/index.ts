@@ -1,1 +1,1 @@
-export { TestComponent } from "./TestComponent/index";
+export { HeroCard } from "./HeroCard/index";

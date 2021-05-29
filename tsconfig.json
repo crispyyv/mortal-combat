@@ -18,8 +18,13 @@
       "@app": ["./app/core/App.tsx"],
       "@components": ["./app/components/index"],
       "@screens": ["./app/screens/index"],
+      "@routes": ["./app/routes/index"],
+      "@hooks": ["app/hooks/index"],
+
+      "@components/*": ["./app/components/*"],
       "@mocks/*": ["./app/assets/mocks/*"],
-      "@core/*": ["./app/core/*"]
+      "@core/*": ["./app/core/*"],
+      "@helpers/*": ["app/helpers/*"]
     }
   },
   "include": ["./", "./webpack.config.ts"]

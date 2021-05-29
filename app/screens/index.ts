@@ -1,1 +1,2 @@
-// exprot {something} from './somethin/index'
+export { ChooseHero } from "./ChooseHero/index";
+export { Fight } from "./Fight/index";
