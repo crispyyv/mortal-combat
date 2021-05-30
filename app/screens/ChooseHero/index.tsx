@@ -23,7 +23,7 @@ export const ChooseHero = memo(() => {
   const [position, setPosition] = useState<[number, number]>([0, 0]);
 
   useEffect(() => {
-    fetchHeroes().catch(console.error);
+    !heroes?.length && fetchHeroes().catch(console.error);
   }, []);
 
   useEffect(() => {

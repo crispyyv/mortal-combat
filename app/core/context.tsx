@@ -9,6 +9,7 @@ export const MemoizedAppContext: React.FC = memo(({ children }) => {
   const [selectedHero, setSelectedHero] = useState<IHero>(null);
   const [heroes, setHeroes] = useState<IHero[]>(null);
   const [isFetching, setIsFetching] = useState<boolean>(false);
+
   return (
     <HeroContext.Provider
       value={{

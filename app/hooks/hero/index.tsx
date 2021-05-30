@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import { HeroContext } from "@core/context";
 import { heroes as mockHeroes } from "@mocks/heroes";
+import { IHero } from "@components/HeroCard/types";
 
 export const useHeroes = () => {
   const { heroes, setHeroes, setSelectedHero, setIsFetching } =
@@ -27,9 +28,13 @@ export const useHeroes = () => {
     }
   };
 
+  const getRandomHero = (): IHero =>
+    heroes ? heroes[Math.floor(Math.random() * heroes.length)] : null;
+
   return {
     fetchHeroes,
     heroes,
     selectHeroAndPush,
+    getRandomHero,
   };
 };

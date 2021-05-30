@@ -7,6 +7,8 @@ export interface IHero {
 export type HeroCardProps = {
   hero: IHero;
   choosen?: boolean;
+  withoutText?: boolean;
+  large?: boolean;
 };
 
 export interface ICardBGImageProps {
@@ -15,4 +17,5 @@ export interface ICardBGImageProps {
 
 export interface ICardWrapperProps {
   readonly choosen?: boolean;
+  readonly isLarge?: boolean;
 }

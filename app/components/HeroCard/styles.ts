@@ -8,7 +8,7 @@ export const CardWrapper = styled.div<ICardWrapperProps>`
 
   width: 100%;
   height: 100%;
-  min-height: 100px;
+  min-height: ${(props) => (props.isLarge ? "350px" : "100px")};
 
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
