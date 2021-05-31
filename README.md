@@ -1,17 +1,19 @@
-# React + Typescript + Webpack scratch
+# Technical task in InfoTech
 
 ## Fast start:
 
 1. For start clone repo `git clone ...`
 
-2. Then `cd react-ts-webpack-scratch`
+2. Then `cd mortal-combat`
 
 3. Then `yarn start:dev`
 
-## Main aliases:
+## Usage guide:
 
-1. `@app` -> `./app/core/App.tsx`
-2. `@components` -> `./app/components/index`
-3. `@screens` -> `./app/screens/index`
-4. `@mocks` -> `./app/assets/mocks/*`
-5. `@core` -> `./app/core/*`
+1. For navigation use `arrow keys`, press `enter` to choose hero
+2. For change emotion use `q` / `w` / `e` / `r` / `t` / `y`
+3. For modal press `k` + `v` or `d` + `b`
+
+## ATTENTION
+
+> Use low sound because when modal is open start play music :D
