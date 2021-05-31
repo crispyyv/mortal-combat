@@ -1,1 +1,3 @@
-export { HeroCard } from "./HeroCard/index";
+export { HeroCard } from "./HeroCard";
+
+export { Modal } from "./Modal";

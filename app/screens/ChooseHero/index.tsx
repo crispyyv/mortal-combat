@@ -12,7 +12,7 @@ import {
   Wrapper,
 } from "./styles";
 import { useHeroes } from "@hooks";
-import { HeroContext } from "@core/context";
+import { HeroContext } from "@context";
 
 const findInMatrix = (i, j) => MATRIX[i][j];
 

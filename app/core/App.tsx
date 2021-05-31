@@ -1,8 +1,8 @@
-import React, { memo } from "react";
+import React from "react";
 
 import { GeneralSwitch } from "@routes";
 import { createGlobalStyle } from "styled-components";
-import { MemoizedAppContext } from "./context";
+import { MemoizedHeroContext, MemoizedModalContext } from "@context";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -21,9 +21,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => (
-  <MemoizedAppContext>
-    <GeneralSwitch />
-    <GlobalStyle />
-  </MemoizedAppContext>
+  <MemoizedHeroContext>
+    <MemoizedModalContext>
+      <GeneralSwitch />
+      <GlobalStyle />
+    </MemoizedModalContext>
+  </MemoizedHeroContext>
 );
 export default App;

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
-import { HeroContext } from "@core/context";
+import { HeroContext } from "@context";
 import { heroes as mockHeroes } from "@mocks/heroes";
 import { IHero } from "@components/HeroCard/types";
 

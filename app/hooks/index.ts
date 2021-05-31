@@ -1,1 +1,2 @@
-export { useHeroes } from "./hero/index";
+export { useHeroes } from "./hero";
+export { useModal } from "./modal";

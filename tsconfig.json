@@ -19,13 +19,16 @@
       "@components": ["./app/components/index"],
       "@screens": ["./app/screens/index"],
       "@routes": ["./app/routes/index"],
-      "@hooks": ["app/hooks/index"],
+      "@hooks": ["./app/hooks/index"],
+      "@context": ["./app/context/index"],
 
       "@components/*": ["./app/components/*"],
       "@mocks/*": ["./app/assets/mocks/*"],
+      "@audio/*": ["./app/assets/audio/*"],
       "@core/*": ["./app/core/*"],
       "@helpers/*": ["app/helpers/*"]
     }
   },
-  "include": ["./", "./webpack.config.ts"]
+  "include": ["./", "./webpack.config.ts"],
+  "exclude": ["node_modules", "dist"]
 }

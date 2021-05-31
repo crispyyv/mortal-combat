@@ -1,6 +1,7 @@
-import { emojies } from "@mocks/emojies";
 import { heroes } from "@mocks/heroes";
-import { findIndex, sample } from "lodash";
+
+import DamnBoi from "@audio/damn_boy.mp3";
+import Kuzko from "@audio/kuzko_kuzko.mp3";
 
 export const MATRIX_SIZE = [6, 6];
 
@@ -74,3 +75,46 @@ export const updateEmojiByIndex = (event: KeyboardEvent) =>
   KEYS_TO_CHANGE_EMOJIES.includes(event.key)
     ? KEYS_TO_CHANGE_EMOJIES.indexOf(event.key)
     : null;
+
+const keyLog: Record<any, any> = {};
+
+const showPupupAndPlaySoundAndPauseTimer = (
+  source: string,
+  setPaused: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+  const sound = new Audio();
+
+  sound.addEventListener("loadedmetadata", () => {
+    const duration = sound.duration;
+    if (Number(duration)) {
+      setPaused(true);
+      sound.play();
+      setTimeout(() => {
+        setPaused(false);
+      }, duration * 1000);
+    }
+  });
+
+  sound.src = source;
+};
+
+export const playSoundAndStopIntervalOnKeyCombination = (
+  { type, key, repeat }: KeyboardEvent,
+  setPaused: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+  if (repeat) return;
+
+  if (type === "keydown") {
+    keyLog[key] = true;
+
+    if (keyLog.d && key === "b") {
+      showPupupAndPlaySoundAndPauseTimer(DamnBoi, setPaused);
+    }
+
+    if (keyLog.k && key === "v") {
+      showPupupAndPlaySoundAndPauseTimer(Kuzko, setPaused);
+    }
+  }
+
+  if (type === "keyup") delete keyLog[key];
+};

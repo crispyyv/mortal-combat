@@ -3,6 +3,8 @@ import path from "path";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
 import webpack, { Configuration } from "webpack";
 
+const AUDIO_PATH = path.resolve(__dirname, "app/assets/audio");
+
 const webpackConfig = (
   env
 ): Configuration & {
@@ -31,6 +33,11 @@ const webpackConfig = (
           transpileOnly: true,
         },
         exclude: /dist/,
+      },
+      {
+        test: /\.mp3$/,
+        include: AUDIO_PATH,
+        loader: "file-loader",
       },
     ],
   },
