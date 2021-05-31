@@ -28,6 +28,7 @@ export const matrixMovement = (
   setPosition: React.Dispatch<React.SetStateAction<[number, number]>>
 ) => {
   event.preventDefault();
+  if (event.type === "keyup") return;
   let iCurrent = position[0];
   let jCurrent = position[1];
 
@@ -72,9 +73,9 @@ export const matrixMovement = (
 };
 
 export const updateEmojiByIndex = (event: KeyboardEvent) =>
-  KEYS_TO_CHANGE_EMOJIES.includes(event.key)
-    ? KEYS_TO_CHANGE_EMOJIES.indexOf(event.key)
-    : null;
+  event.type === "keyup" &&
+  KEYS_TO_CHANGE_EMOJIES.includes(event.key) &&
+  KEYS_TO_CHANGE_EMOJIES.indexOf(event.key);
 
 const keyLog: Record<any, any> = {};
 
